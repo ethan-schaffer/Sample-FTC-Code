@@ -466,7 +466,7 @@ public class AHRS {
      *
      * This information can be used to match the navX-Model
      * sensor update rate w/the effective update rate which
-     * can be achieved in the Robot Controller, taking into
+     * can be achieved in the MecanumChassis Controller, taking into
      * account the communication over the network with the
      * Core Device Interface Module.
      */
