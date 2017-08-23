@@ -93,8 +93,8 @@ public class VuforiaGetter {
     }
 
     public class DistanceOffsets{
-        double distance, horizontal, vertical;
-        boolean foundValues;
+        public double distance, horizontal, vertical;
+        public boolean foundValues;
         DistanceOffsets(double forwardsBack, double leftRight, double upDown){
             distance = forwardsBack;
             horizontal = leftRight;
