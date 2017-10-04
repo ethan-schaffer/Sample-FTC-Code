@@ -19,9 +19,13 @@ import org.firstinspires.ftc.teamcode.navX.ftc.AHRS;
 import java.util.Arrays;
 import java.util.Objects;
 
-/**
- * Created by Ethan Schaffer
- */
+/*
+This code is written as an example only.
+Obviously, it was not tested on your team's robot.
+Teams who use and reference this code are expected to understand code they use.
+
+If you use our code and see us at competition, come say hello!
+*/
 
 public class MecanumChassis {
     public enum team {

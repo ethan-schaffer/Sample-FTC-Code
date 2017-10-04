@@ -9,9 +9,14 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 import java.util.Arrays;
 
-/**
- * Created by Ethan Schaffer on 10/31/2016.
- */
+/*
+This code is written as an example only.
+Obviously, it was not tested on your team's robot.
+Teams who use and reference this code are expected to understand code they use.
+
+If you use our code and see us at competition, come say hello!
+*/
+
 @com.qualcomm.robotcore.eventloop.opmode.TeleOp(name="Mecanum Tele Op", group="TeleOp")
 public class MecanumTeleOp extends OpMode {
 

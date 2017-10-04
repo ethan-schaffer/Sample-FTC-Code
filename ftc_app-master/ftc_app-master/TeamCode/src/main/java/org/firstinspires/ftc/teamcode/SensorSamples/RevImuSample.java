@@ -9,9 +9,13 @@ import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 
-/**
- * Created by Ethan Schaffer on 8/22/2017.
- */
+/*
+This code is written as an example only.
+Obviously, it was not tested on your team's robot.
+Teams who use and reference this code are expected to understand code they use.
+
+If you use our code and see us at competition, come say hello!
+*/
 
 public class RevImuSample extends OpMode {
     BNO055IMU imu;

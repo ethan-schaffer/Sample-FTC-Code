@@ -15,9 +15,13 @@ import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
 import org.firstinspires.ftc.teamcode.VuforiaSamples.VuforiaGetter;
 
-/**
- * Created by Ethan Schaffer on 7/2/2017.
- */
+/*
+This code is written as an example only.
+Obviously, it was not tested on your team's robot.
+Teams who use and reference this code are expected to understand code they use.
+
+If you use our code and see us at competition, come say hello!
+*/
 
 public class SixWheelDrive {
     DcMotor leftFront, leftBack, rightFront, rightBack;
@@ -25,7 +29,7 @@ public class SixWheelDrive {
     LinearOpMode linearOpMode;
     BNO055IMU imu;
 
-    SixWheelDrive(LinearOpMode l, DcMotor lf, DcMotor lb, DcMotor rf, DcMotor rb) {
+    public SixWheelDrive(LinearOpMode l, DcMotor lf, DcMotor lb, DcMotor rf, DcMotor rb) {
         telemetry = l.telemetry;
         HardwareMap hardwareMap = l.hardwareMap;
         linearOpMode = l;

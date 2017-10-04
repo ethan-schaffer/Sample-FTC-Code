@@ -8,6 +8,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/*
+This code is written as an example only.
+Obviously, it was not tested on your team's robot.
+Teams who use and reference this code are expected to understand code they use.
+
+If you use our code and see us at competition, come say hello!
+*/
 
 public class FileReading extends LinearOpMode {
     @Override
@@ -18,8 +25,8 @@ public class FileReading extends LinearOpMode {
         Scanner s;
         try {
             s = new Scanner(file);
-            while(s.hasNext()){
-                if(gamepad1.a && !lastAButton){
+            while (s.hasNext()) {
+                if (gamepad1.a && !lastAButton) {
                     telemetry.addData("File Said:", s.next());
                 }
                 lastAButton = gamepad1.a;

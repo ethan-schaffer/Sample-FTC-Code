@@ -1,8 +1,12 @@
 package org.firstinspires.ftc.teamcode.MecanumSamples;
 
-/**
- * Created by Ethan Schaffer on 8/15/2017.
- */
+/*
+This code is written as an example only.
+Obviously, it was not tested on your team's robot.
+Teams who use and reference this code are expected to understand code they use.
+
+If you use our code and see us at competition, come say hello!
+*/
 
 public class UniversalConstants {
     static final String LEFT1NAME = "l1"; //LX Port 2

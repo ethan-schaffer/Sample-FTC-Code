@@ -5,10 +5,15 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
+import org.firstinspires.ftc.teamcode.TankSamples.SixWheelDrive;
 
-/**
- * Created by Ethan Schaffer on 7/2/2017.
- */
+/*
+This code is written as an example only.
+Obviously, it was not tested on your team's robot.
+Teams who use and reference this code are expected to understand code they use.
+
+If you use our code and see us at competition, come say hello!
+*/
 
 @Autonomous(name = "Vuforia Drive to Gear", group = "Autonomous")
 public class SimpleDriveToGear extends LinearOpMode {
@@ -33,22 +38,20 @@ public class SimpleDriveToGear extends LinearOpMode {
         double startTime = getRuntime();
         while (opModeIsActive() && !v.getOffset(patterns, pattern).foundValues) {
             drive.setPowers(.6);
-            telemetry.addData("Left", "%.2f", drive.leftBack.getPower());
-            telemetry.addData("Right", "%.2f", drive.rightBack.getPower());
         }
         double distance = v.getOffset(patterns, pattern).distance / UniversalContants.millimetersPerInch - 24;
         double horizontal = v.getOffset(patterns, pattern).horizontal / UniversalContants.millimetersPerInch;
         if (distance > 5 || horizontal > 6) {
             double theta = Math.atan2(distance, horizontal);
             double distanceTarget = distance / Math.sin(theta);
-            theta*=UniversalContants.degreesPerRadian;
+            theta *= UniversalContants.degreesPerRadian;
             drive.turnRelative(.25, theta);
 
             telemetry.addData("Distance Goal", distanceTarget);
             telemetry.update();
 
             drive.setPowers(.40);
-            Thread.sleep((long)distanceTarget*25);
+            Thread.sleep((long) distanceTarget * 25);
 
             drive.turnRelative(.25, -theta);
             while (opModeIsActive() && Math.abs(v.getOffset(patterns, pattern).horizontal) > 3) {
