@@ -1,10 +1,10 @@
-package org.firstinspires.ftc.teamcode.ControlArm;
+package org.firstinspires.ftc.teamcode.ArmSample;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.TouchSensor;
 
-public class armMovingSample extends LinearOpMode {
+public class touchSensorExample extends LinearOpMode {
     DcMotor arm;
     TouchSensor touchSensorUp, touchSensorDown;
     boolean armGoingUp = false, armGoingDown = false;
@@ -12,6 +12,7 @@ public class armMovingSample extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         arm = hardwareMap.dcMotor.get("arm");
+        arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         touchSensorUp = hardwareMap.touchSensor.get("up");
         touchSensorDown = hardwareMap.touchSensor.get("down");
         waitForStart();
