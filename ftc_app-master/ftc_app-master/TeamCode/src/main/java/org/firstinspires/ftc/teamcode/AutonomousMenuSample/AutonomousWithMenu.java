@@ -26,6 +26,8 @@ public class AutonomousWithMenu extends LinearOpMode {
             }
             telemetry.addData("Time Waiting: ", waitTime + " seconds");
             telemetry.update();
+            lastDown = gamepad1.dpad_down;
+            lastUp = gamepad1.dpad_up;
         }
         // the loop can't end until the "Play" button is pressed
 
