@@ -4,9 +4,6 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-/**
- * Created by ethan on 8/31/17.
- */
 
 @TeleOp(name = "Simple Controller")
 public class DriveCode extends LinearOpMode {

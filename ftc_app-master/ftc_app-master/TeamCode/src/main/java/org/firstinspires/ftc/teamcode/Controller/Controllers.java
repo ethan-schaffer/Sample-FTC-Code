@@ -3,13 +3,19 @@ package org.firstinspires.ftc.teamcode.Controller;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
-/**
- * Created by ethan on 8/31/17.
- */
+/*
+This code is written as an example only.
+Obviously, it was not tested on your team's robot.
+Teams who use and reference this code are expected to understand code they use.
+
+If you use our code and see us at competition, come say hello!
+*/
+
 class ControllerMock {
     public boolean a, b, x, y, left_stick_button, right_stick_button, dpad_left, dpad_right, dpad_up, dpad_down, left_bumper, right_bumper;
     public float left_trigger, right_trigger, left_stick_x, left_stick_y, right_stick_x, right_stick_y;
-    void update(Gamepad gamepad){
+
+    void update(Gamepad gamepad) {
         a = gamepad.a;
         b = gamepad.b;
         x = gamepad.x;
@@ -30,11 +36,14 @@ class ControllerMock {
         right_stick_y = gamepad.right_stick_y;
     }
 }
+
 class Controllers {
     ControllerMock gamepad1, gamepad2;
-    Controllers(){}
 
-    void update(LinearOpMode l){
+    Controllers() {
+    }
+
+    void update(LinearOpMode l) {
         gamepad1.update(l.gamepad1);
         gamepad2.update(l.gamepad2);
     }
