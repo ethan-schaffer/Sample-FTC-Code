@@ -22,7 +22,7 @@ public class SampleVuMarkUser extends LinearOpMode {
         VuMarkGetter.DistanceOffsets distanceOffsets;
         while (opModeIsActive()) {
             distanceOffsets = vuMarkGetter.getOffset(trackables);
-            telemetry.addData("Seeing", distanceOffsets.vuMarkType.toString());
+            telemetry.addData("Target Type", distanceOffsets.vuMarkType.toString());
             telemetry.addData("Distance", distanceOffsets.distance);
             telemetry.addData("Horizontal", distanceOffsets.horizontal);
             telemetry.addData("Vertical", distanceOffsets.vertical);
