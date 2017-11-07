@@ -21,7 +21,10 @@ If you use our code and see us at competition, come say hello!
 @com.qualcomm.robotcore.eventloop.opmode.TeleOp(name = "Simplest Mecanum Tele Op", group = "TeleOp")
 public class SimplestMecanumTeleOp extends OpMode {
 
-    private static DcMotor leftFrontWheel, leftBackWheel, rightFrontWheel, rightBackWheel;
+    private static DcMotor leftFrontWheel;
+    private static DcMotor leftBackWheel;
+    private static DcMotor rightFrontWheel;
+    private static DcMotor rightBackWheel;
 
     @Override
     public void init() {
@@ -38,31 +41,30 @@ public class SimplestMecanumTeleOp extends OpMode {
         double inputY = -gamepad1.left_stick_y;
         double inputX = -gamepad1.left_stick_x;
         double inputC = -gamepad1.right_stick_x;
+        //the negative signs in front of the gamepad inputs may need to be removed.
 
-        arcadeMecanum(inputY, inputX, inputC, leftFrontWheel, rightFrontWheel, leftBackWheel, rightBackWheel);
+        driveMecanum(inputY, inputX, inputC);
     }
 
-    // y - forwards
-    // x - side
-    // c - rotation
-    public static void arcadeMecanum(double y, double x, double c, DcMotor leftFront, DcMotor rightFront, DcMotor leftBack, DcMotor rightBack) {
-        double leftFrontVal = y + x + c;
-        double rightFrontVal = y - x - c;
-        double leftBackVal = y - x + c;
-        double rightBackVal = y + x - c;
+    public static void driveMecanum(double forwards, double horizontal, double turning) {
+        double leftFront = forwards + horizontal + turning;
+        double leftBack = forwards - horizontal + turning;
+        double rightFront = forwards - horizontal - turning;
+        double rightBack = forwards + horizontal - turning;
 
-        //Move range to between 0 and +1, if not already
-        double[] wheelPowers = {rightFrontVal, leftFrontVal, leftBackVal, rightBackVal};
+        double[] wheelPowers = {Math.abs(rightFront), Math.abs(leftFront), Math.abs(leftBack), Math.abs(rightBack)};
         Arrays.sort(wheelPowers);
-        if (wheelPowers[3] > 1) {
-            leftFrontVal /= wheelPowers[3];
-            rightFrontVal /= wheelPowers[3];
-            leftBackVal /= wheelPowers[3];
-            rightBackVal /= wheelPowers[3];
+        double biggestInput = wheelPowers[3];
+        if (biggestInput > 1) {
+            leftFront /= biggestInput;
+            leftBack /= biggestInput;
+            rightFront /= biggestInput;
+            rightBack /= biggestInput;
         }
-        leftFront.setPower(leftFrontVal);
-        rightFront.setPower(rightFrontVal);
-        leftBack.setPower(leftBackVal);
-        rightBack.setPower(rightBackVal);
+
+        leftFrontWheel.setPower(leftFront);
+        rightFrontWheel.setPower(rightFront);
+        leftBackWheel.setPower(leftBack);
+        rightBackWheel.setPower(rightBack);
     }
 }
