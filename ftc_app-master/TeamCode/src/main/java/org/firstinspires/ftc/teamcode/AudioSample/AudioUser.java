@@ -2,6 +2,8 @@ package org.firstinspires.ftc.teamcode.AudioSample;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
+import java.io.IOException;
+
 /*
 This code is written as an example only.
 Obviously, it was not tested on your team's robot.
@@ -14,8 +16,13 @@ public class AudioUser extends OpMode {
     AudioHandler audioHandler;
     @Override
     public void init() {
-        AudioHandler audioHandler = new AudioHandler();
-        audioHandler.playSound();
+        AudioHandler audioHandler = null;
+        try {
+            audioHandler = new AudioHandler();
+            audioHandler.playSound();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
